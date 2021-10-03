@@ -1,0 +1,151 @@
+/* Source Sans Pro regular */
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('./fonts/SourceSansPro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Source Sans Pro extra light */
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('./fonts/SourceSansPro-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+
+/* Source Sans Pro bold */
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('./fonts/SourceSansPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a:not([draggable=true]), img:not([draggable=true]) {
+    -webkit-user-drag: none;
+}
+
+a[href^="http://"],
+a[href^="https://"],
+a[href^="ftp://"] {
+    -webkit-user-drag: auto;
+}
+
+:not(input):not(textarea),
+:not(input):not(textarea)::after,
+:not(input):not(textarea)::before,
+:not(.screen > *) {
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+input, button, textarea, :focus {
+    outline: none;
+}
+
+body {
+    overflow: hidden;
+}
+
+.calculator {
+  /*width: 400px;*/
+  height: 700px;
+}
+
+.screen {
+  width: 400px;
+  height: 200px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 42px;
+  font-weight: 400;
+  padding: 20px 20px;
+  background-color: #111;
+  color: #fff;
+  text-align: right;
+  position: relative;
+}
+
+.screen > .operations {
+  max-width: 400px;
+  word-wrap: break-word;
+}
+
+.screen > .accumulator {
+  font-size: 63px;
+  max-width: 400px;
+  word-wrap: break-word;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px 20px;
+}
+
+.keypad {
+  font-size: 0;
+  width: 400px;
+  display: grid;
+  grid-template: 500px / 300px 100px;
+}
+
+.keypad-top {
+  width: 300px;
+}
+
+.numpad {
+  width: 300px;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap-reverse;
+}
+
+.keypad-bottom {
+  width: 300px;
+}
+
+.keypad-right {
+  width: 100px;
+}
+
+.keypad button {
+  width: 100px;
+  height: 100px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 36px;
+  font-family: 'Source Sans Pro', sans-serif;
+  border: 1px solid rgba(209, 209, 209, 0.08);
+  cursor: pointer;
+  transition: 150ms ease-in-out all;
+  font-weight: 200;
+}
+
+.keypad button:hover {
+  opacity: .9;
+}
+
+.keypad button:active {
+  opacity: .8;
+}
+
+.keypad-right button {
+  background-color: #9E53C1;
+}
+
+.keypad-right button.equals {
+  background-color: #EE780C;
+}
+
+.numpad button {
+  flex-grow: 1;
+}

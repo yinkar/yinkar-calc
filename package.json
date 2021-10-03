@@ -1,0 +1,14 @@
+{
+  "name": "yinkar-calc",
+  "version": "1.0.0",
+  "description": "Yet another calculator",
+  "main": "main.js",
+  "author": "yinkar",
+  "scripts": {
+    "start": "electron ."
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^15.1.0"
+  }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Yinkar Calculator</title>
+    <link rel="stylesheet" href="./calculator.css" />
+</head>
+<body>
+    <div class="calculator">
+        <div class="screen">
+            <div class="operations">
+                <span class="first"></span>
+                <span class="operation"></span>
+                <span class="last"></span>
+            </div>
+            <div class="accumulator"></div>
+        </div>
+        <div class="keypad">
+            <div class="keypad-left">
+            <div class="keypad-top">
+                <button data-action="clear">C</button>
+                <button data-action="swap">+/-</button>
+                <button data-action="percent">%</button>
+            </div>
+            <div class="numpad">
+                <button data-action="num" data-number="1">1</button>
+                <button data-action="num" data-number="2">2</button>
+                <button data-action="num" data-number="3">3</button>
+                <button data-action="num" data-number="4">4</button>
+                <button data-action="num" data-number="5">5</button>
+                <button data-action="num" data-number="6">6</button>
+                <button data-action="num" data-number="7">7</button>
+                <button data-action="num" data-number="8">8</button>
+                <button data-action="num" data-number="9">9</button>
+            </div>
+            <div class="keypad-bottom">
+                <button data-action="num" data-number="0">0</button>
+                <button data-action="period">,</button>
+                <button data-action="del">del</button>
+            </div>
+            </div>
+            <div class="keypad-right">
+            <button data-action="operation" data-operation="divide">÷</button>
+            <button data-action="operation" data-operation="multiply">×</button>
+            <button data-action="operation" data-operation="minus">-</button>
+            <button data-action="operation" data-operation="plus">+</button>
+            <button data-action="equals" class="equals">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="./calculator.js"></script>
+</body>
+</html>
