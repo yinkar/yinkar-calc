@@ -26,10 +26,10 @@ keys.forEach(e => {
         switch (this.dataset.action) {
             case 'num':
                 prevElement.innerText = '';
-                if (currentOperation === null && firstOperandElement.innerText.length < 8) {
+                if (currentOperation === null && firstOperandElement.innerText.length < 9) {
                     firstOperandElement.innerText += this.dataset.number;
                 }
-                else if (currentOperation !== null && lastOperandElement.innerText.length < 8) {
+                else if (currentOperation !== null && lastOperandElement.innerText.length < 9) {
                     lastOperandElement.innerText += this.dataset.number;
                 }
                 break;
