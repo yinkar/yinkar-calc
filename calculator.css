@@ -133,18 +133,18 @@ body {
   outline: none;
   font-size: 36px;
   font-family: 'Source Sans Pro', sans-serif;
-  border: 1px solid rgba(209, 209, 209, 0.08);
+  border: 1px solid rgba(209, 209, 209, 0.1);
   cursor: pointer;
   transition: 150ms ease-in-out all;
   font-weight: 200;
 }
 
 .keypad button:hover {
-  opacity: .9;
+  filter: contrast(0.95);
 }
 
 .keypad button:active {
-  opacity: .8;
+  filter: contrast(0.8);
 }
 
 .keypad-right button {
