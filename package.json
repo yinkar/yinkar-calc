@@ -1,14 +1,20 @@
 {
   "name": "yinkar-calc",
+  "productName": "Yinkar Calculator",
   "version": "1.0.0",
   "description": "Yet another calculator",
   "main": "main.js",
   "author": "yinkar",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack:linux": "electron-packager . --platform=linux --out=release-builds/linux --arch=x64 --overwrite --icon=icon.png --prune=true",
+    "pack:win64": "electron-packager . --platform=win32 --out=release-builds/win64 --arch=x64 --overwrite --icon=icon.ico --prune=true",
+    "pack:mac": "electron-packager . --platform=darwin --out=release-builds/mac --arch=x64 --overwrite --icon=icon.icns --prune=true",
+    "build": "npm run pack:linux && npm run pack:win64 && npm run pack:mac"
   },
   "license": "MIT",
   "devDependencies": {
-    "electron": "^15.1.0"
+    "electron": "^15.1.0",
+    "electron-packager": "^15.4.0"
   }
 }

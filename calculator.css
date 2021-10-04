@@ -60,7 +60,7 @@ body {
 }
 
 .calculator {
-  /*width: 400px;*/
+  width: 400px;
   height: 700px;
 }
 
@@ -68,7 +68,7 @@ body {
   width: 400px;
   height: 200px;
   font-family: 'Source Sans Pro', sans-serif;
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 400;
   padding: 20px 20px;
   background-color: #111;
@@ -83,7 +83,7 @@ body {
 }
 
 .screen > .accumulator {
-  font-size: 63px;
+  font-size: 56px;
   max-width: 400px;
   text-overflow: clip;
   overflow: hidden;

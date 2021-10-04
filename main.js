@@ -6,9 +6,13 @@ function createWindow() {
         width: 400,
         height: 700,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
+            preload: path.join(__dirname, 'preload.js'),
+            devTools: false
         },
         icon: __dirname + '/icon.png',
+        resizable: false,
+        maximizable: false,
+        darkTheme: true
     });
 
     win.loadFile('index.html');
