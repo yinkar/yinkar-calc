@@ -1,5 +1,6 @@
 const opsElement = document.querySelector('.screen > .operations');
 const accElement = document.querySelector('.screen > .accumulator');
+const prevElement = document.querySelector('.screen > .previous-operands');
 const keys = document.querySelectorAll('.keypad button');
 
 let currentOperation = null;
@@ -24,10 +25,11 @@ keys.forEach(e => {
     e.addEventListener('click', function(e) {
         switch (this.dataset.action) {
             case 'num':
-                if (currentOperation === null) {
+                prevElement.innerText = '';
+                if (currentOperation === null && firstOperandElement.innerText.length < 8) {
                     firstOperandElement.innerText += this.dataset.number;
                 }
-                else {
+                else if (currentOperation !== null && lastOperandElement.innerText.length < 8) {
                     lastOperandElement.innerText += this.dataset.number;
                 }
                 break;
@@ -54,7 +56,18 @@ keys.forEach(e => {
                             result = 0;
                     }
 
-                    accElement.innerText = `= ${result}`;
+                    prevElement.innerText = `${
+                        firstOperandElement.innerText
+                    } ${
+                        operationElement.innerText
+                    } ${
+                        lastOperandElement.innerText
+                    }`;
+
+                    accElement.innerText = `= ${
+                        result.toString().length > 10 ? result.toExponential(5) : result
+                    }`;
+
                     firstOperandElement.innerText = '';
                     lastOperandElement.innerText = '';
                     operationElement.innerText = '';
@@ -87,6 +100,7 @@ keys.forEach(e => {
                 operationElement.innerText = '';
                 lastOperandElement.innerText = '';
                 accElement.innerText = '';
+                prevElement.innerText = '';
                 currentOperation = null;
                 break;
             case 'percent':
@@ -105,11 +119,11 @@ keys.forEach(e => {
                     lastOperandElement.innerText = lastOperandElement.innerText.slice(0, -1);
                 }
                 break;
-            case 'period':
-                if (firstOperandElement.innerText.length > 0 && currentOperation === null) {
+            case 'point':
+                if (firstOperandElement.innerText.length > 0 && !firstOperandElement.innerText.includes('.') && currentOperation === null) {
                     firstOperandElement.innerText += '.';
                 }
-                else if (lastOperandElement.innerText.length > 0 && currentOperation !== null) {
+                else if (lastOperandElement.innerText.length && !lastOperandElement.innerText.includes('.') > 0 && currentOperation !== null) {
                     lastOperandElement.innerText += '.';
                 }
                 break;
