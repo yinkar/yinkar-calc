@@ -105,10 +105,10 @@ keys.forEach(e => {
                 break;
             case 'percent':
                 if (firstOperandElement.innerText.length > 0 && currentOperation === null) {
-                    firstOperandElement.innerText /= 100;
+                    firstOperandElement.innerText = percent(firstOperandElement.innerText);
                 }
                 if (lastOperandElement.innerText.length > 0 && currentOperation !== null) {
-                    lastOperandElement.innerText /= 100;
+                    lastOperandElement.innerText = percent(lastOperandElement.innerText);
                 }
                 break;
             case 'del':
@@ -146,4 +146,12 @@ function mul(first, last) {
 
 function div(first, last) {
     return first / last;
+}
+
+function percent(number) {
+    let result = Math.round(number * 0.01 * Math.pow(10, 9)) / Math.pow(10, 9);
+    if (result.toString().length > 8) {
+        result = result.toExponential(4);
+    }
+    return result;
 }
