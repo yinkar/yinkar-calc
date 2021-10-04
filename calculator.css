@@ -80,6 +80,7 @@ body {
 .screen > .operations {
   max-width: 400px;
   word-wrap: break-word;
+  margin-top: 40px;
 }
 
 .screen > .accumulator {
