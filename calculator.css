@@ -55,7 +55,7 @@ input, button, textarea, :focus {
 }
 
 body {
-    overflow: auto;
+    overflow: hidden;
     background: #000;
 }
 
