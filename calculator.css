@@ -174,11 +174,11 @@ body {
   filter: brightness(1.4);
 }
 
-.numpad button:hover, .keypad-bottom button:hover {
+.numpad button:hover, .keypad-bottom button:hover, .keypad-top button:hover {
   background-color: rgba(255, 255, 255, .25);
 }
 
-.numpad button:active, .keypad-bottom button:active {
+.numpad button:active, .keypad-bottom button:active, .keypad-top button:active {
   background-color: rgba(255, 255, 255, .30);
 }
 
