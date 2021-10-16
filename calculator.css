@@ -55,18 +55,21 @@ input, button, textarea, :focus {
 }
 
 body {
-    overflow: hidden;
+    overflow: auto;
     background: #000;
 }
 
 .calculator {
   width: 400px;
   height: 700px;
+  margin: 0 auto;
+  background-image: url('assets/images/calc-bg.png');
 }
 
 .screen {
-  width: 400px;
-  height: 200px;
+  width: 390px;
+  height: 190px;
+  margin: 5px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 32px;
   font-weight: 400;
@@ -75,6 +78,11 @@ body {
   color: #fff;
   text-align: right;
   position: relative;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.30);
+  backdrop-filter: blur(15px);
+  box-shadow: inset 2px -2px 2px rgba(255, 255, 255, 0.13);
+  border-radius: 15px;
 }
 
 .screen > .operations {
@@ -97,6 +105,19 @@ body {
 
 .screen > .previous-operands {
   opacity: .7;
+}
+
+.screen::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: rotate(
+322deg) translate(-65px, -123px) scale(1.3);
+  opacity: .07;
 }
 
 .keypad {
@@ -126,34 +147,50 @@ body {
 }
 
 .keypad button {
-  width: 100px;
-  height: 100px;
-  background-color: #222;
+  width: 90px;
+  height: 90px;
+  background-color: rgba(255, 255, 255, .15);
   color: #fff;
   border: none;
   outline: none;
   font-size: 36px;
+  margin: 5px;
   font-family: 'Source Sans Pro', sans-serif;
-  border: 1px solid rgba(209, 209, 209, 0.1);
+  border: none;
   cursor: pointer;
   transition: 150ms ease-in-out all;
   font-weight: 200;
+  border-radius: 15px;
+  box-shadow: inset 2px -2px 2px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
 }
 
+
 .keypad button:hover {
-  filter: contrast(0.95);
+  filter: brightness(1.2);
 }
 
 .keypad button:active {
-  filter: contrast(0.8);
+  filter: brightness(1.4);
+}
+
+.numpad button:hover, .keypad-bottom button:hover {
+  background-color: rgba(255, 255, 255, .25);
+}
+
+.numpad button:active, .keypad-bottom button:active {
+  background-color: rgba(255, 255, 255, .30);
 }
 
 .keypad-right button {
-  background-color: #9E53C1;
+  background-color: #9E53C188;
+  border-radius: 15px;
+  box-shadow: inset 2px -2px 2px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
 }
 
 .keypad-right button.equals {
-  background-color: #EE780C;
+  background-color: #EE780CBB;
 }
 
 .numpad button {

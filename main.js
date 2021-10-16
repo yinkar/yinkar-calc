@@ -12,7 +12,8 @@ function createWindow() {
         icon: __dirname + '/icon.png',
         resizable: false,
         maximizable: false,
-        darkTheme: true
+        darkTheme: true,
+        autoHideMenuBar: true
     });
 
     win.loadFile('index.html');
