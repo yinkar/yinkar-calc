@@ -227,3 +227,8 @@ function clear() {
     prevElement.innerText = '';
     currentOperation = null;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.preload-transitions')
+        .classList.remove('preload-transitions');
+});
