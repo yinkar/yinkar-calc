@@ -183,6 +183,10 @@ body {
   pointer-events: none;
 }
 
+.keypad-bottom button {
+  background-color: rgba(0, 0, 0, .50);
+}
+
 .keypad button:hover {
   filter: brightness(1.1);
 }
@@ -192,12 +196,20 @@ body {
   box-shadow: inset -2px -2px 2px rgba(255, 255, 255, 0.2);
 }
 
-.numpad button:hover, .keypad-bottom button:hover, .keypad-top button:hover {
+.numpad button:hover, .keypad-top button:hover {
   background-color: rgba(255, 255, 255, .10);
 }
 
-.numpad button:active, .keypad-bottom button:active, .keypad-top button:active {
+.numpad button:active, .keypad-top button:active {
   background-color: rgba(255, 255, 255, .20);
+}
+
+.keypad-bottom button:hover {
+  background-color: rgba(255, 255, 255, .05);
+}
+
+.keypad-bottom button:active {
+  background-color: rgba(255, 255, 255, .10);
 }
 
 .keypad-right button {
@@ -207,9 +219,25 @@ body {
   backdrop-filter: blur(20px);
 }
 
+.keypad-right button:hover {
+  background-color: #9c29d1bb;
+}
+
+.keypad-right button:active {
+  background-color: #9c29d1ee;
+}
+
 .keypad-right button.equals {
   background-color: #ff7300bb;
   box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.4);
+}
+
+.keypad-right button.equals:hover {
+  background-color: #ff7300ee;
+}
+
+.keypad-right button.equals:active {
+  background-color: #ff7300ff;
 }
 
 .numpad button {
